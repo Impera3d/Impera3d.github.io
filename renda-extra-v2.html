@@ -1,77 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Descubra um método simples e validado para gerar renda extra com zero investimento inicial.">
+  <meta charset="UTF-8" />
   <title>Como Ganhar Renda Extra em 7 Dias</title>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": "Como Ganhar Renda Extra Online em 7 Dias – Método Revelado!",
-    "image": "https://img.exemplo.jpg",
-    "description": "Descubra um método simples e validado para gerar renda extra com zero investimento inicial. Ideal para quem quer começar ainda hoje e alcançar liberdade financeira com apenas um link. Clique e veja como.",
-    "offers": {
-      "@type": "Offer",
-      "url": "https://marketingimpera.app.n8n.cloud/webhook/clique-ia?produto=renda-extra-v2",
-      "availability": "https://schema.org/InStock"
-    }
-  }
-  </script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff;
-      text-align: center;
-      padding: 40px;
-    }
-    h1 {
-      color: #007171;
-    }
-    p {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 30px;
-    }
-    a.botao {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 10px;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 20px 0;
-    }
-    small {
-      color: #666;
-    }
-  </style>
+  <meta name="description" content="Descubra um método simples e validado para gerar renda extra com zero investimento inicial.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body style="font-family:Arial; text-align:center; padding:20px; background:#fff;">
 
-  <h1>Como Ganhar Renda Extra em 7 Dias</h1>
-  <img src="https://img.exemplo.jpg" alt="Imagem do Produto">
+  <h1 style="color:teal;">Como Ganhar Renda Extra em 7 Dias</h1>
+  <img src="https://img.exemplo.jpg" alt="Método revelado" style="max-width:100%; border-radius:10px;" />
   <p>Aprenda a gerar renda extra online de forma simples, rápida e sem precisar investir nada. Método validado para iniciantes.</p>
 
-  <a href="https://marketingimpera.app.n8n.cloud/webhook/clique-ia?produto=renda-extra-v2"
-     class="botao" target="_blank">🛒 Acessar Agora</a>
+  <form id="cliqueForm">
+    <input type="hidden" name="produto" value="renda-extra-v2">
+    <button type="submit" style="padding:12px 20px; background:#28d766; color:white; font-weight:bold; border:none; border-radius:5px;">
+      💰 Acessar Agora
+    </button>
+  </form>
 
-  <br><br>
+  <script>
+    document.getElementById('cliqueForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
 
-  <a href="https://instagram.com/renatomeneses81" target="_blank">
-    <img src="https://img.icons8.com/ios-glyphs/30/000000/instagram-new.png" alt="Instagram" style="margin-top:20px;">
-  </a>
-  <br><br>
-  <small>Renato Soares de Meneses – 
-    <a href="https://instagram.com/renatomeneses81" target="_blank">@renatomeneses81</a>
-  </small>
+      await fetch("https://marketingimpera.app.n8n.cloud/webhook/clique-ia", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ produto: "renda-extra-v2" })
+      });
+
+      // Redireciona após o POST
+      window.location.href = "https://teu-link-de-afiliado.com";
+    });
+  </script>
 
 </body>
 </html>
