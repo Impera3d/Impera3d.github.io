@@ -1,39 +1,25 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <title>Como Ganhar Renda Extra em 7 Dias</title>
-  <meta name="description" content="Descubra um método simples e validado para gerar renda extra com zero investimento inicial.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="font-family:Arial; text-align:center; padding:20px; background:#fff;">
+<form id="clickForm" action="https://marketingimpera.app.n8n.cloud/webhook/clique-ia" method="POST">
+  <input type="hidden" name="slug" value="renda-extra-v2">
+  <button type="submit" style="display:inline-block;background:#25D366;color:white;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;margin:10px;border:none;cursor:pointer;">
+    📲 Acessar Agora
+  </button>
+</form>
 
-  <h1 style="color:teal;">Como Ganhar Renda Extra em 7 Dias</h1>
-  <img src="https://img.exemplo.jpg" alt="Método revelado" style="max-width:100%; border-radius:10px;" />
-  <p>Aprenda a gerar renda extra online de forma simples, rápida e sem precisar investir nada. Método validado para iniciantes.</p>
-
-  <form id="cliqueForm">
-    <input type="hidden" name="produto" value="renda-extra-v2">
-    <button type="submit" style="padding:12px 20px; background:#28d766; color:white; font-weight:bold; border:none; border-radius:5px;">
-      💰 Acessar Agora
-    </button>
-  </form>
-
-  <script>
-    document.getElementById('cliqueForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      await fetch("https://marketingimpera.app.n8n.cloud/webhook/clique-ia", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ produto: "renda-extra-v2" })
-      });
-
-      // Redireciona após o POST
-      window.location.href = "https://teu-link-de-afiliado.com";
+<script>
+  const form = document.getElementById('clickForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const slug = formData.get("slug");
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: formData,
     });
-  </script>
-
-</body>
-</html>
-
+    const data = await res.json();
+    if (data.redirectUrl) {
+      window.location.href = data.redirectUrl;
+    } else {
+      alert("Erro no redirecionamento.");
+    }
+  });
+</script>
