@@ -2,7 +2,9 @@
 
 <script>
   async function enviarDados() {
-    const produto = "renda-com-ia"; // o slug real do produto
+    const produto = "renda-extra-v2"; // slug do produto
+    const redirecionarPara = "https://teu-link-de-afiliado.com"; // ⬅️ substitui aqui
+
     const webhookUrl = "https://marketingimpera.app.n8n.cloud/webhook/clique-ia";
 
     try {
@@ -15,12 +17,12 @@
           produto: produto,
           origem: "GitHub",
           botao: "WhatsApp",
-          pais: "PT"
+          pais: "PT",
+          redirect: redirecionarPara  // 🔁 redirecionamento enviado para o n8n!
         }),
       });
 
-      // Redirecionar para o link de afiliado
-      window.location.href = "https://teu-link-de-afiliado.com";
+      // Nada aqui — o próprio n8n vai redirecionar!
     } catch (error) {
       alert("Erro ao enviar os dados.");
       console.error(error);
