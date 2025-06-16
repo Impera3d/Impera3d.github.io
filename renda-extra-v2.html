@@ -2,7 +2,7 @@
 
 <script>
   async function enviarDados() {
-    const produto = "renda-extra-v2"; // slug do produto
+    const produto = "renda-com-ia"; // Exemplo: slug dinâmico
     const webhookUrl = "https://marketingimpera.app.n8n.cloud/webhook/clique-ia";
 
     try {
@@ -19,10 +19,10 @@
         }),
       });
 
-      // Redirecionar após o POST
-      window.location.href = "https://teu-link-de-afiliado.com"; // Substitui aqui!
+      // Redireciona após o envio
+      window.location.href = "https://teu-link-do-produto.com"; // Muda isto para o link correto
     } catch (error) {
-      alert("Erro ao enviar os dados. Verifica o webhook.");
+      alert("Erro ao enviar os dados.");
       console.error(error);
     }
   }
