@@ -1,0 +1,23 @@
+name: Remover ficheiros emagrecer-rapido
+
+on:
+  workflow_dispatch:  # Executa manualmente pelo botão "Run workflow"
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar o repositório
+        uses: actions/checkout@v3
+
+      - name: Apagar ficheiros que começam com "emagrecer-rapido"
+        run: |
+          find . -type f -name "emagrecer-rapido-*.html" -delete
+
+      - name: Commit e push das mudanças
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Remover ficheiros emagrecer-rapido" || echo "Nada para apagar"
+          git push
