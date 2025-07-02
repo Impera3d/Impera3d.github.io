@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap principal
+Sitemap: https://impera3d.github.io/sitemap.xml
+
+# Otimizações específicas
+Disallow: /wp-admin/
+Disallow: /*.json$
+Disallow: /*?*
+
+# Crawl delay para bots específicos (opcional)
+User-agent: GPTBot
+Crawl-delay: 86400
+
+User-agent: CCBot
+Crawl-delay: 86400
+
+# Informações adicionais
+# Host: impera3d.github.io
+# Contact: contato@impera3d.com
